@@ -81,11 +81,9 @@ public class Input implements InputProcessor {
 			pointer++; // pointer = 1
 			if (Gdx.input.isTouched()) {
 				pointer++; // pointer = 2
-			}
-			if (Input.justReleased() && !Input.touchExceded(camera)) {
-				pointer += 2; // pointer = 3;
-				// GameScreen.splodes.add(new
-				// Clicksplosion(Input.getX(camera),Input.getY(camera),5));
+				if (Gdx.input.justTouched()) {
+					pointer++;
+				}
 			}
 		}
 		return pointer;

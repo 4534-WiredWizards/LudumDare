@@ -50,7 +50,7 @@ public class TitleScreen implements Screen {
 				}
 			}*/
 			
-			batch.draw(tex, -tex.getWidth() / 2, LD34Main.HEIGHT - tex.getHeight());
+			batch.draw(tex, -(tex.getWidth() * 2) / 2, LD34Main.HEIGHT / 2 - tex.getHeight() * 2, tex.getWidth() * 2, tex.getHeight() * 2);
 			
 			if (font == null) {
 				parameter.size = 40 * Gdx.graphics.getHeight() / LD34Main.HEIGHT;
