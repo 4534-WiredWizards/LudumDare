@@ -8,6 +8,9 @@ import com.badlogic.gdx.Screen;
 
 public class LD34Main extends Game {
 	
+	public static final int WIDTH = 720, HEIGHT = 480;
+	public static float gameTime = 0;
+	
 	@Override
 	public void create () {
 		setScreen(new TitleScreen());
@@ -15,6 +18,7 @@ public class LD34Main extends Game {
 
 	@Override
 	public void render () {
+		gameTime += Gdx.graphics.getDeltaTime();
 		super.render();
 	}
 	

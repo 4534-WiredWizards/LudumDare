@@ -7,6 +7,8 @@ import org.wiredwizards.ludum.dare.LD34Main;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+		config.width = LD34Main.WIDTH;
+		config.height = LD34Main.HEIGHT;
 		new LwjglApplication(new LD34Main(), config);
 		
 		
