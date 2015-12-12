@@ -36,7 +36,7 @@ public class TitleScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
-		Graphics.clear(0, 0, 0);
+		Graphics.clear(0, 1, 1);
 		/*Update*/{
 			camera.update();
 		}
@@ -49,6 +49,8 @@ public class TitleScreen implements Screen {
 							* Graphics.stoneBackground.getHeight());
 				}
 			}*/
+			
+			batch.draw(tex, -tex.getWidth() / 2, LD34Main.HEIGHT - tex.getHeight());
 			
 			if (font == null) {
 				parameter.size = 40 * Gdx.graphics.getHeight() / LD34Main.HEIGHT;
