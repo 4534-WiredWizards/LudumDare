@@ -1,5 +1,7 @@
 package org.wiredwizards.ludum.dare.screens;
 
+import org.wiredwizards.ludum.dare.LD34Main;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -11,6 +13,7 @@ public class TitleScreen implements Screen {
 	
 	@Override
 	public void show() {
+		LD34Main.setTheScreen(new GameScreen());
 	}
 
 	@Override
