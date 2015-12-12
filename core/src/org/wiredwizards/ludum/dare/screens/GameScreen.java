@@ -24,7 +24,9 @@ public class GameScreen implements Screen {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		batch.begin();
 		{
-			// Render here.
+			for (int i = 0; i < objects.size(); i++) {
+				objects.get(i).render(batch, delta);
+			}
 		}
 		batch.end();
 	}

@@ -15,7 +15,7 @@ public abstract class GameObject {
 	}
 
 	public void render(SpriteBatch batch, float delta) {
-
+		
 	}
 
 	public Rectangle getBounds() {
