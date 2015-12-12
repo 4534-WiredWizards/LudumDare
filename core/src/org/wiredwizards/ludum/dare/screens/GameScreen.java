@@ -1,5 +1,9 @@
 package org.wiredwizards.ludum.dare.screens;
 
+import java.util.LinkedList;
+
+import org.wiredwizards.ludum.dare.GameObject;
+
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
@@ -8,6 +12,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class GameScreen implements Screen {
 
 	private final SpriteBatch batch = new SpriteBatch();
+	public static final LinkedList<GameObject> objects = new LinkedList<GameObject>();
 	
 	@Override
 	public void show() {
