@@ -9,7 +9,7 @@ package org.wiredwizards.ludum.dare;
 public interface Todo {
 	
 	// TODO: Austin
-	// TODO: Do art
+	// TODO: Control systems
 	
 	// TODO: Gage
 	// TODO: Make comprehensive design pitch on the Doc
@@ -18,8 +18,11 @@ public interface Todo {
 	
 	// TODO: Brandon
 	// TODO: Make screen system
+	// TODO: Backbone of program
 	
 	// TODO: Tom
 	// TODO: Make music
+	// TODO: Look over sprites we have
+	// TODO: Make the rest of the game object sprites
 
 }
