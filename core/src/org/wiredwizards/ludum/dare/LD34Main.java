@@ -1,5 +1,6 @@
 package org.wiredwizards.ludum.dare;
 
+import org.wiredwizards.ludum.dare.screens.Splash;
 import org.wiredwizards.ludum.dare.screens.TitleScreen;
 
 import com.badlogic.gdx.Game;
@@ -14,7 +15,7 @@ public class LD34Main extends Game {
 	
 	@Override
 	public void create () {
-		setScreen(new TitleScreen());
+		setScreen(new Splash());
 	}
 
 	@Override
