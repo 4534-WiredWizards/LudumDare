@@ -20,6 +20,7 @@ public class Credits implements Screen {
 		credits = Gdx.files.internal("credits.dat").readString();
 		camera = new OrthographicCamera(TitleScreen.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
 		resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		LD34Main.gameTime = 0;
 	}
 
 	@Override
@@ -31,7 +32,7 @@ public class Credits implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		/*Render*/{
-			TitleScreen.font.draw(batch, credits, 0, 0);
+			TitleScreen.font.draw(batch, credits, 0, LD34Main.gameTime * 80);
 		}
 		batch.end();
 	}

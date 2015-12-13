@@ -29,6 +29,7 @@ public class GameScreen implements Screen {
 
 	@Override
 	public void show() {
+		objects.clear();
 		camera = new OrthographicCamera(TitleScreen.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
 		player = new Player(0,0,camera);
 		LD34Main.gameTime = 0;
