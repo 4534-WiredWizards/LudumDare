@@ -4,6 +4,7 @@ import org.wiredwizards.ludum.dare.screens.TitleScreen;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.Screen;
 
 public class LD34Main extends Game {
@@ -19,6 +20,9 @@ public class LD34Main extends Game {
 	@Override
 	public void render () {
 		gameTime += Gdx.graphics.getDeltaTime();
+		if (Gdx.input.isKeyJustPressed(Keys.ESCAPE)) {
+			setScreen(new TitleScreen());
+		}
 		super.render();
 	}
 	
