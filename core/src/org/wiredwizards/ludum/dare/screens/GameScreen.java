@@ -44,6 +44,8 @@ public class GameScreen implements Screen {
 				Gdx.app.exit();
 			}
 		}
+		camera.position.y = (int)camera.position.y;
+		camera.position.x = (int)camera.position.x;
 		camera.update();
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
