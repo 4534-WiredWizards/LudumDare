@@ -20,7 +20,6 @@ public class GameScreen implements Screen {
 	public static final Texture overlays = new Texture("overlays.png");
 	private final SpriteBatch batch = new SpriteBatch();
 	public static final LinkedList<GameObject> objects = new LinkedList<GameObject>();
-	public static GameObject[][] blocks;
 	public static Player player;
 	private OrthographicCamera camera;
 	public static int currentLayer = 0;
@@ -28,7 +27,6 @@ public class GameScreen implements Screen {
 	@Override
 	public void show() {
 		camera = new OrthographicCamera(TitleScreen.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
-		blocks = new GameObject[0][0];
 		player = new Player(0,0,camera);
 	}
 
@@ -54,14 +52,6 @@ public class GameScreen implements Screen {
 				for (int y = -(int)(camera.viewportHeight / 256f); y < (int)(camera.viewportHeight / 256f) + 1; y++) {
 					TextureRegion region = new TextureRegion(backgrounds, 0, currentLayer * 64, 64, 64);
 					batch.draw(region, (int)(camera.position.x + x * 256 - camera.position.x % 256), (int)(camera.position.y + y * 256 - (camera.position.y / 2) % 256), 256, 256);
-				}
-			}
-			for (int x = 0; x < blocks.length; x++) {
-				for (int y = 0; y < blocks[0].length; y++) {
-					GameObject o = blocks[x][y];
-					if (o != null) {
-						o.render(batch, delta);
-					}
 				}
 			}
 			for (int i = 0; i < objects.size(); i++) {
