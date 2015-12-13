@@ -32,7 +32,7 @@ public class Credits implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		/*Render*/{
-			TitleScreen.font.draw(batch, credits, 0, LD34Main.gameTime * 80);
+			TitleScreen.font.draw(batch, credits, - camera.viewportWidth / 2 + 10, LD34Main.gameTime * 80);
 		}
 		batch.end();
 	}
