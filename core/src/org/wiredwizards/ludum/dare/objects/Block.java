@@ -3,6 +3,7 @@ package org.wiredwizards.ludum.dare.objects;
 import java.util.Random;
 
 import org.wiredwizards.ludum.dare.GameObject;
+import org.wiredwizards.ludum.dare.LD34Main;
 import org.wiredwizards.ludum.dare.screens.GameScreen;
 
 import com.badlogic.gdx.graphics.Texture;
@@ -18,7 +19,7 @@ public class Block extends GameObject {
 	public static final float size = 64;
 
 	public Block() {
-		super(rand.nextInt((int)(GameScreen.camera.viewportWidth / size)) * size - GameScreen.camera.viewportWidth / 2f, GameScreen.camera.position.y + GameScreen.camera.viewportHeight, size, size);
+		super(rand.nextInt((int)(GameScreen.camera.viewportWidth / size)) * size - GameScreen.camera.viewportWidth / 2f, GameScreen.camera.position.y + LD34Main.HEIGHT / 2f, size, size);
 		tex = new TextureRegion(sheet, 32 * rand.nextInt(4), 32 * GameScreen.currentLayer, 32, 32);
 	}
 

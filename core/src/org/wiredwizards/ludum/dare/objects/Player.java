@@ -37,6 +37,12 @@ public class Player extends GameObject {
 		y += vSpeed * delta;//(float) (Math.sin(direction) * speed * delta);
 		//camera.position.x = x;
 		camera.position.y = y + LD34Main.HEIGHT / 4f;
+		for (int i = 0; i < GameScreen.objects.size(); i++) {
+			GameObject o = GameScreen.objects.get(i);
+			if (o != this) {
+				
+			}
+		}
 	}
 
 	public void render(SpriteBatch batch, float delta) {

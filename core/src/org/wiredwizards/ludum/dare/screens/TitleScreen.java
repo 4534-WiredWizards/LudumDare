@@ -43,13 +43,6 @@ public class TitleScreen implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		/*Render*/{
-			/*for (int x = -1; x < camera.viewportWidth / Graphics.stoneBackground.getWidth() + 1; x++) {
-				for (int y = -1; y < camera.viewportHeight / Graphics.stoneBackground.getHeight() + 1; y++) {
-					batch.draw(Graphics.stoneBackground, -camera.viewportWidth / 2 + x * Graphics.stoneBackground.getWidth(), -camera.viewportHeight / 2 + y
-							* Graphics.stoneBackground.getHeight());
-				}
-			}*/
-			
 			batch.draw(tex, -(tex.getWidth() * 2) / 2, LD34Main.HEIGHT / 2 - tex.getHeight() * 2, tex.getWidth() * 2, tex.getHeight() * 2);
 			
 			if (font == null) {
