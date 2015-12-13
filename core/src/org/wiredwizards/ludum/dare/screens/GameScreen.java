@@ -43,8 +43,7 @@ public class GameScreen implements Screen {
 			player.update(delta);
 			currentLayer = (int)(LD34Main.gameTime / textureSwitchTime);
 			if (currentLayer > 6) {
-				// TODO: Make "You Win" screen.
-				Gdx.app.exit();
+				LD34Main.setTheScreen(new Credits());
 			}
 			blockDelta += delta;
 			if (blockDelta > 0.6f) {
