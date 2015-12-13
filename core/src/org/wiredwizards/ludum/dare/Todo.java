@@ -6,21 +6,23 @@ package org.wiredwizards.ludum.dare;
  * @author Me
  *
  */
-public interface Todo { 
-	
+public interface Todo {
+
+	// TODO: Fix Austin's F*CKING error!!!
+
 	// TODO: Austin
 	// TODO: Control systems
-	
+
 	// TODO: Gage
 	// TODO: Make comprehensive design pitch on the Doc
 	// TODO: Make map
 	// TODO: Make an Amazing maparoo
-	
+
 	// TODO: Brandon
 	// TODO: Make screen system
 	// TODO: Make title screen
 	// TODO: Backbone of program
-	
+
 	// TODO: Tom
 	// TODO: Make music
 	// TODO: Look over sprites we have
