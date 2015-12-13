@@ -27,7 +27,7 @@ public class Player extends GameObject {
 	}
 
 	public void update(float delta) {
-		vSpeed = 600 + LD34Main.gameTime * 0.5f;
+		vSpeed = 600 + LD34Main.gameTime * 2f;
 		speed = (float) Math.sqrt(Math.pow(vSpeed, 2) + Math.pow(x - Input.getX(camera), 2));
 		direction = Math.atan2(128, Input.getX(camera) - x);
 		segmentDelta += speed * delta;
