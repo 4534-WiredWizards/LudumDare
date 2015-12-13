@@ -2,6 +2,7 @@ package org.wiredwizards.ludum.dare.objects;
 
 import org.wiredwizards.ludum.dare.GameObject;
 import org.wiredwizards.ludum.dare.Input;
+import org.wiredwizards.ludum.dare.LD34Main;
 import org.wiredwizards.ludum.dare.screens.GameScreen;
 
 import com.badlogic.gdx.graphics.Camera;
@@ -13,7 +14,8 @@ public class Player extends GameObject {
 
 	public static final Texture flower = new Texture("flower.png");
 	public double direction = 0;
-	public float speed = 80;
+	public float speed;
+	public static final float vSpeed = 1500;
 	private Camera camera;
 	private float segmentDelta = 0;
 
@@ -23,7 +25,8 @@ public class Player extends GameObject {
 	}
 
 	public void update(float delta) {
-		direction = Math.atan2(Input.getY(camera) - camera.position.y, Input.getX(camera) - camera.position.x);
+		speed = (float)Math.sqrt(Math.pow(vSpeed, 2) + Math.pow(Input.getX(camera) - x, 2));
+		direction = Math.atan2(128, Input.getX(camera) - x);
 		segmentDelta += speed * delta;
 		if (segmentDelta > 32) {
 			segmentDelta -= 32;
@@ -31,8 +34,8 @@ public class Player extends GameObject {
 		}
 		x += (float) (Math.cos(direction) * speed * delta);
 		y += (float) (Math.sin(direction) * speed * delta);
-		camera.position.x = x;
-		camera.position.y = y;
+		//camera.position.x = x;
+		camera.position.y = y + LD34Main.HEIGHT / 4f;
 	}
 
 	public void render(SpriteBatch batch, float delta) {

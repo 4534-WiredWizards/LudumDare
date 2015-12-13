@@ -13,6 +13,7 @@ public class Segment extends GameObject {
 																	// 64 x 32
 	public TextureRegion tex = new TextureRegion(sheet);
 	public double direction;
+	private float time = 0;
 
 	public Segment() {
 		super(GameScreen.player.x, GameScreen.player.y, 32, 32);
@@ -20,6 +21,10 @@ public class Segment extends GameObject {
 	}
 
 	public void render(SpriteBatch batch, float delta) {
+		time += delta;
+		if (time > 0.5) {
+			GameScreen.objects.remove(this);
+		}
 		batch.draw(tex, x - tex.getRegionWidth() / 2f, y - tex.getRegionHeight() / 2f, tex.getRegionWidth() / 2, tex.getRegionHeight() / 2, tex.getRegionWidth(), tex.getRegionHeight(), 1, 1,
 				(float) Math.toDegrees(direction) - 90f);
 	}
