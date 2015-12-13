@@ -25,7 +25,7 @@ public class GameScreen implements Screen {
 	public static OrthographicCamera camera;
 	public static int currentLayer = 0;
 	public static float blockDelta = 0;
-	public static final float textureSwitchTime = 60f;
+	public static final float textureSwitchTime = 40f;
 
 	@Override
 	public void show() {

@@ -4,6 +4,7 @@ import org.wiredwizards.ludum.dare.GameObject;
 import org.wiredwizards.ludum.dare.Input;
 import org.wiredwizards.ludum.dare.LD34Main;
 import org.wiredwizards.ludum.dare.screens.GameScreen;
+import org.wiredwizards.ludum.dare.screens.TitleScreen;
 
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Texture;
@@ -55,11 +56,12 @@ public class Player extends GameObject {
 		batch.draw(tex, x - tex.getRegionWidth() / 2f, y - tex.getRegionHeight() / 2f, tex.getRegionWidth() / 2f, tex.getRegionHeight() / 2f,
 				tex.getRegionWidth(), tex.getRegionHeight(), height / tex.getRegionHeight(), height / tex.getRegionHeight(),
 				(float) Math.toDegrees(direction) - 90f);
+		TitleScreen.font.draw(batch, String.valueOf((int)(LD34Main.gameTime / 10f)), -camera.viewportWidth / 2f, camera.position.y + camera.viewportHeight / 2f);
 	}
 
 	@Override
 	public Rectangle getBounds() {
-		return new Rectangle(x - width / 2f, y - height / 2f, width, height);
+		return new Rectangle(x - 32 / 2f, y - 32 / 2f, 32, 32);
 	}
 
 }
