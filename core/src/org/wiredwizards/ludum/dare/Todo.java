@@ -8,8 +8,6 @@ package org.wiredwizards.ludum.dare;
  */
 public interface Todo {
 
-	// TODO: Fix Austin's F*CKING error!!!
-
 	// TODO: Austin
 	// TODO: Control systems
 
