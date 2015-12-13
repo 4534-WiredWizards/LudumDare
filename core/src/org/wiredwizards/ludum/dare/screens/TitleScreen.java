@@ -43,8 +43,9 @@ public class TitleScreen implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		/*Render*/{
-			batch.draw(tex, -(tex.getWidth() * 2) / 2 + Input.getX(camera) / 5f, LD34Main.HEIGHT / 2 - tex.getHeight() * 2 + Input.getY(camera) / 5f, tex.getWidth() * 2, tex.getHeight() * 2);
-			
+			batch.draw(tex, -(tex.getWidth() * 2) / 2 + Input.getX(camera) / 30f, LD34Main.HEIGHT / 2 - tex.getHeight() * 2 + Input.getY(camera) / 30f,
+					tex.getWidth() * 2, tex.getHeight() * 2);
+
 			if (font == null) {
 				parameter.size = 40 * Gdx.graphics.getHeight() / LD34Main.HEIGHT;
 				font = generator.generateFont(parameter);
