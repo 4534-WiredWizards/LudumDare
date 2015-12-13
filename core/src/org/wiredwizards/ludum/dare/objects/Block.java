@@ -16,7 +16,7 @@ public class Block extends GameObject {
 	private TextureRegion tex;
 	public static final Random rand = new Random();
 	private float time = 0;
-	public static final float size = 16;
+	public static final float size = 64;
 
 	public Block() {
 		super(rand.nextInt((int) (GameScreen.camera.viewportWidth / size) + 1) * size - GameScreen.camera.viewportWidth / 2f, GameScreen.camera.position.y

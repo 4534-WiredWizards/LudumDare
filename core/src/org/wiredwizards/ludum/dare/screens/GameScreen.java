@@ -47,7 +47,7 @@ public class GameScreen implements Screen {
 				Gdx.app.exit();
 			}
 			blockDelta += delta;
-			if (blockDelta > 0.1f) {
+			if (blockDelta > 0.6f) {
 				blockDelta = 0;
 				for (int i = 0; i < camera.viewportWidth / LD34Main.WIDTH + 1; i++) {
 					objects.add(new Block());
