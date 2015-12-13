@@ -27,5 +27,7 @@ public interface Todo {
 	// TODO: Make music
 	// TODO: Look over sprites we have
 	// TODO: Make the rest of the game object sprites
+	
+	public void fixedError();
 
 }
