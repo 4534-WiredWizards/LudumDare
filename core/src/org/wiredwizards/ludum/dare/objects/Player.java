@@ -41,7 +41,7 @@ public class Player extends GameObject {
 			GameObject o = GameScreen.objects.get(i);
 			if (!(o instanceof Player)) {
 				if (o.getBounds().overlaps(getBounds())) {
-					y = 0;
+					// y = 0;
 				}
 			}
 		}
