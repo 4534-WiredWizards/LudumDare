@@ -15,14 +15,10 @@ public interface Todo {
 	// TODO: Make comprehensive design pitch on the Doc
 
 	// TODO: Brandon
-	// TODO: Make screen system
-	// TODO: Make title screen
-	// TODO: Backbone of program
 
 	// TODO: Tom
 	// TODO: Make music
-	// TODO: Look over sprites we have
-	// TODO: Make the rest of the game object sprites
+	// TODO: Make game object sprites
 	
 	public void fixedError();
 
