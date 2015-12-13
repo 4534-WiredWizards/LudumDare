@@ -35,7 +35,7 @@ public class TitleScreen implements Screen {
 
 	@Override
 	public void render(float delta) {
-		Graphics.clear(0, 1, 1);
+		Graphics.clear(0, 1, 0);
 		/*Update*/{
 			camera.update();
 		}
