@@ -6,6 +6,7 @@ import org.wiredwizards.ludum.dare.LD34Main;
 import org.wiredwizards.ludum.dare.screens.GameScreen;
 import org.wiredwizards.ludum.dare.screens.TitleScreen;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -41,13 +42,16 @@ public class Player extends GameObject {
 		camera.position.y = y + LD34Main.HEIGHT / 4f;
 		for (int i = 0; i < GameScreen.objects.size(); i++) {
 			GameObject o = GameScreen.objects.get(i);
-			if (!(o instanceof Segment)) {
+			if (!(o instanceof Segment || o instanceof Bullet)) {
 				if (o.getBounds().overlaps(getBounds())) {
 					y = 0;
 					LD34Main.gameTime = (int)(LD34Main.gameTime / 10f) * 10;
 					GameScreen.objects.clear();
 				}
 			}
+		}
+		if (Gdx.input.justTouched()) {
+			GameScreen.objects.add(new Bullet());
 		}
 	}
 
