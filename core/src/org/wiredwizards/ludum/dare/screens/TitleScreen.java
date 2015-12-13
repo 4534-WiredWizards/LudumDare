@@ -29,7 +29,6 @@ public class TitleScreen implements Screen {
 		batch = new SpriteBatch();
 		camera = new OrthographicCamera(getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
 		resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		System.out.println("RUN");
 		generator = new FreeTypeFontGenerator(Gdx.files.internal("DroidSans-Bold.ttf"));
 		parameter = new FreeTypeFontParameter();
 	}
