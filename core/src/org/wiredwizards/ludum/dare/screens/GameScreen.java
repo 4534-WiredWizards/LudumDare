@@ -4,6 +4,7 @@ import java.util.LinkedList;
 
 import org.wiredwizards.ludum.dare.GameObject;
 import org.wiredwizards.ludum.dare.LD34Main;
+import org.wiredwizards.ludum.dare.objects.Block;
 import org.wiredwizards.ludum.dare.objects.Player;
 
 import com.badlogic.gdx.Gdx;
@@ -21,8 +22,9 @@ public class GameScreen implements Screen {
 	private final SpriteBatch batch = new SpriteBatch();
 	public static final LinkedList<GameObject> objects = new LinkedList<GameObject>();
 	public static Player player;
-	private OrthographicCamera camera;
+	public static OrthographicCamera camera;
 	public static int currentLayer = 0;
+	public static float blockDelta = 0;
 
 	@Override
 	public void show() {
@@ -40,6 +42,13 @@ public class GameScreen implements Screen {
 			if (currentLayer > 6) {
 				// TODO: Make "You Win" screen.
 				Gdx.app.exit();
+			}
+			blockDelta += delta;
+			if (blockDelta > 0.6f) {
+				blockDelta = 0;
+				for (int i = 0; i < camera.viewportWidth / LD34Main.WIDTH + 1; i++) {
+					objects.add(new Block());
+				}
 			}
 		}
 		camera.position.y = (int)camera.position.y;
