@@ -72,7 +72,7 @@ public class GameScreen implements Screen {
 			for (int x = -(int)((camera.viewportWidth / 256f)) - 1; x < camera.viewportWidth / 256f; x++) {
 				for (int y = -(int)(camera.viewportHeight / 256f); y < (int)(camera.viewportHeight / 256f) + 1; y++) {
 					TextureRegion region = new TextureRegion(overlays, 0, currentLayer * 64, 64, 64);
-					batch.draw(region, (int)(camera.position.x + x * 256 - camera.position.x % 256), (int)(camera.position.y + y * 256 - (camera.position.y * 1.1f) % 256), 256, 256);
+					batch.draw(region, (int)(camera.position.x + x * 256 - camera.position.x % 256), (int)(camera.position.y + y * 256 - (camera.position.y * 1.4f) % 256), 256, 256);
 				}
 			}
 		}
