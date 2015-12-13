@@ -6,7 +6,7 @@ package org.wiredwizards.ludum.dare;
  * @author Me
  *
  */
-public interface Todo {
+public interface Todo { 
 	
 	// TODO: Austin
 	// TODO: Control systems
