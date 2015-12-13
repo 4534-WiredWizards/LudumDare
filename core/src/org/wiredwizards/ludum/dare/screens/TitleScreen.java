@@ -62,6 +62,9 @@ public class TitleScreen implements Screen {
 			String credits = "Credits";
 			layout.setText(font, credits);
 			font.draw(batch, credits, -layout.width / 2, -LD34Main.HEIGHT / 10 * 3);
+			if (Input.touchGlyph(layout, new Vector2( -layout.width / 2, -LD34Main.HEIGHT / 10 * 3), camera) == 3) {
+				LD34Main.setTheScreen(new Credits());
+			}
 		}
 		batch.end();
 	}
