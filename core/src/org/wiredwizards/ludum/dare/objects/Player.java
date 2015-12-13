@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 
 public class Player extends GameObject {
 
@@ -26,7 +27,7 @@ public class Player extends GameObject {
 
 	public void update(float delta) {
 		vSpeed = 600 + LD34Main.gameTime * 0.5f;
-		speed = (float)Math.sqrt(Math.pow(vSpeed, 2) + Math.pow(x - Input.getX(camera), 2));
+		speed = (float) Math.sqrt(Math.pow(vSpeed, 2) + Math.pow(x - Input.getX(camera), 2));
 		direction = Math.atan2(128, Input.getX(camera) - x);
 		segmentDelta += speed * delta;
 		if (segmentDelta > 32) {
@@ -34,8 +35,8 @@ public class Player extends GameObject {
 			GameScreen.objects.add(new Segment());
 		}
 		x += (float) (Math.cos(direction) * speed * delta);
-		y += vSpeed * delta;//(float) (Math.sin(direction) * speed * delta);
-		//camera.position.x = x;
+		y += vSpeed * delta;// (float) (Math.sin(direction) * speed * delta);
+		// camera.position.x = x;
 		camera.position.y = y + LD34Main.HEIGHT / 4f;
 		for (int i = 0; i < GameScreen.objects.size(); i++) {
 			GameObject o = GameScreen.objects.get(i);
@@ -51,8 +52,14 @@ public class Player extends GameObject {
 
 	public void render(SpriteBatch batch, float delta) {
 		TextureRegion tex = new TextureRegion(flower);
-		batch.draw(tex, x - tex.getRegionWidth() / 2f, y - tex.getRegionHeight() / 2f, tex.getRegionWidth() / 2f, tex.getRegionHeight() / 2f, tex.getRegionWidth(), tex.getRegionHeight(), height / tex.getRegionHeight(), height / tex.getRegionHeight(),
+		batch.draw(tex, x - tex.getRegionWidth() / 2f, y - tex.getRegionHeight() / 2f, tex.getRegionWidth() / 2f, tex.getRegionHeight() / 2f,
+				tex.getRegionWidth(), tex.getRegionHeight(), height / tex.getRegionHeight(), height / tex.getRegionHeight(),
 				(float) Math.toDegrees(direction) - 90f);
+	}
+
+	@Override
+	public Rectangle getBounds() {
+		return new Rectangle(x - width / 2f, y - height / 2f, width, height);
 	}
 
 }
