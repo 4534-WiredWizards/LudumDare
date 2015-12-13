@@ -42,7 +42,7 @@ public class Player extends GameObject {
 			if (!(o instanceof Segment)) {
 				if (o.getBounds().overlaps(getBounds())) {
 					y = 0;
-					LD34Main.gameTime = 0;
+					LD34Main.gameTime = GameScreen.textureSwitchTime * GameScreen.currentLayer;
 					GameScreen.objects.clear();
 				}
 			}

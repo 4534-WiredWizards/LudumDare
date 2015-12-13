@@ -25,6 +25,7 @@ public class GameScreen implements Screen {
 	public static OrthographicCamera camera;
 	public static int currentLayer = 0;
 	public static float blockDelta = 0;
+	public static final float textureSwitchTime = 10f;
 
 	@Override
 	public void show() {
@@ -39,7 +40,7 @@ public class GameScreen implements Screen {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		/* Update */{
 			player.update(delta);
-			currentLayer = (int)(LD34Main.gameTime / 10f);
+			currentLayer = (int)(LD34Main.gameTime / textureSwitchTime);
 			if (currentLayer > 6) {
 				// TODO: Make "You Win" screen.
 				Gdx.app.exit();
