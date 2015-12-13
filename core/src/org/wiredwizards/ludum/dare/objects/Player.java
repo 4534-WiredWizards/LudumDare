@@ -15,7 +15,7 @@ public class Player extends GameObject {
 	public static final Texture flower = new Texture("flower.png");
 	public double direction = 0;
 	public float speed;
-	public static final float vSpeed = 1500;
+	public static float vSpeed = 128;
 	private Camera camera;
 	private float segmentDelta = 0;
 
@@ -25,7 +25,8 @@ public class Player extends GameObject {
 	}
 
 	public void update(float delta) {
-		speed = (float)Math.sqrt(Math.pow(vSpeed, 2) + Math.pow(Input.getX(camera) - x, 2));
+		vSpeed = 600 + LD34Main.gameTime * 0.5f;
+		speed = (float)Math.sqrt(Math.pow(vSpeed, 2) + Math.pow(x - Input.getX(camera), 2));
 		direction = Math.atan2(128, Input.getX(camera) - x);
 		segmentDelta += speed * delta;
 		if (segmentDelta > 32) {
@@ -33,7 +34,7 @@ public class Player extends GameObject {
 			GameScreen.objects.add(new Segment());
 		}
 		x += (float) (Math.cos(direction) * speed * delta);
-		y += (float) (Math.sin(direction) * speed * delta);
+		y += vSpeed * delta;//(float) (Math.sin(direction) * speed * delta);
 		//camera.position.x = x;
 		camera.position.y = y + LD34Main.HEIGHT / 4f;
 	}

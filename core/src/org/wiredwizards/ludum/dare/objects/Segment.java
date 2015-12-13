@@ -22,7 +22,7 @@ public class Segment extends GameObject {
 
 	public void render(SpriteBatch batch, float delta) {
 		time += delta;
-		if (time > 0.5) {
+		if (time > 2) {
 			GameScreen.objects.remove(this);
 		}
 		batch.draw(tex, x - tex.getRegionWidth() / 2f, y - tex.getRegionHeight() / 2f, tex.getRegionWidth() / 2, tex.getRegionHeight() / 2, tex.getRegionWidth(), tex.getRegionHeight(), 1, 1,

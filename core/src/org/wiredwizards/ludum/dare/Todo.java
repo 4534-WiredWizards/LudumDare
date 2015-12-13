@@ -13,8 +13,6 @@ public interface Todo {
 
 	// TODO: Gage
 	// TODO: Make comprehensive design pitch on the Doc
-	// TODO: Make map
-	// TODO: Make an Amazing maparoo
 
 	// TODO: Brandon
 	// TODO: Make screen system
