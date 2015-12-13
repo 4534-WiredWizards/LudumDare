@@ -9,7 +9,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.width = LD34Main.WIDTH;
 		config.height = LD34Main.HEIGHT;
-		config.title = "TITLE";
+		config.title = "Weeds";
 		config.vSyncEnabled = true;
 		new LwjglApplication(new LD34Main(), config);
 		
