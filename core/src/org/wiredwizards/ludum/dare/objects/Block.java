@@ -15,9 +15,10 @@ public class Block extends GameObject {
 	private TextureRegion tex;
 	public static final Random rand = new Random();
 	private float time = 0;
+	public static final float size = 64;
 
 	public Block() {
-		super(rand.nextInt((int)(GameScreen.camera.viewportWidth / 128f)) * 128, GameScreen.camera.position.y + GameScreen.camera.viewportHeight, 128, 128);
+		super(rand.nextInt((int)(GameScreen.camera.viewportWidth / size)) * size - GameScreen.camera.viewportWidth / 2f, GameScreen.camera.position.y + GameScreen.camera.viewportHeight, size, size);
 		tex = new TextureRegion(sheet, 32 * rand.nextInt(4), 32 * GameScreen.currentLayer, 32, 32);
 	}
 
@@ -27,7 +28,7 @@ public class Block extends GameObject {
 		if (time > 10) {
 			GameScreen.objects.remove(this);
 		}
-		batch.draw(tex, x, y, 128, 128);
+		batch.draw(tex, x, y, size, size);
 	}
 
 }
