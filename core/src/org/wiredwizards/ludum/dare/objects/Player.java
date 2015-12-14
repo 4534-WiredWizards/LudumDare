@@ -28,7 +28,7 @@ public class Player extends GameObject {
 	}
 
 	public void update(float delta) {
-		vSpeed = 400 + LD34Main.gameTime * 3f;
+		vSpeed = 400 + LD34Main.gameTime * 5f;
 		speed = (float) Math.sqrt(Math.pow(vSpeed, 2) + Math.pow(x - Input.getX(camera), 2));
 		direction = Math.atan2(128, Input.getX(camera) - x);
 		segmentDelta += speed * delta;
@@ -50,9 +50,6 @@ public class Player extends GameObject {
 				}
 			}
 		}
-		if (Gdx.input.justTouched()) {
-			GameScreen.objects.add(new Bullet());
-		}
 	}
 
 	public void render(SpriteBatch batch, float delta) {
@@ -60,7 +57,7 @@ public class Player extends GameObject {
 		batch.draw(tex, x - tex.getRegionWidth() / 2f, y - tex.getRegionHeight() / 2f, tex.getRegionWidth() / 2f, tex.getRegionHeight() / 2f,
 				tex.getRegionWidth(), tex.getRegionHeight(), height / tex.getRegionHeight(), height / tex.getRegionHeight(),
 				(float) Math.toDegrees(direction) - 90f);
-		TitleScreen.font.draw(batch, String.valueOf((int)(LD34Main.gameTime / 10f)), -camera.viewportWidth / 2f, camera.position.y + camera.viewportHeight / 2f);
+		TitleScreen.font.draw(batch, String.valueOf((int)(LD34Main.gameTime / 10f)), -camera.viewportWidth / 2f + 2, camera.position.y - camera.viewportHeight / 2f + TitleScreen.font.getCapHeight());
 	}
 
 	@Override

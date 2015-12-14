@@ -10,7 +10,7 @@ import com.badlogic.gdx.Screen;
 
 public class LD34Main extends Game {
 	
-	public static final int WIDTH = 720, HEIGHT = 480;
+	public static final int WIDTH = 480, HEIGHT = 720;
 	public static float gameTime = 0;
 	
 	@Override
