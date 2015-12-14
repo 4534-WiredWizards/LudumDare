@@ -56,7 +56,7 @@ public class AndroidLauncher extends AndroidApplication {
 		RelativeLayout.LayoutParams adParams = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,
 				RelativeLayout.LayoutParams.WRAP_CONTENT);
 		layout.addView(adView, adParams);
-		adView.loadAd(builder.build());
+		// adView.loadAd(builder.build());
 
 		setContentView(layout);
 
