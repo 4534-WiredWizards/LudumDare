@@ -40,7 +40,7 @@ public class Splash implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		/*Render*/{
-			batch.draw(tex, -LD34Main.WIDTH / 2f, -LD34Main.HEIGHT / 2f, LD34Main.WIDTH, LD34Main.HEIGHT);
+			batch.draw(tex, -LD34Main.WIDTH / 2f, -(((float)LD34Main.WIDTH / tex.getWidth()) * tex.getHeight()) / 2f, LD34Main.WIDTH, ((float)LD34Main.WIDTH / tex.getWidth()) * tex.getHeight());
 		}
 		batch.end();
 	}
