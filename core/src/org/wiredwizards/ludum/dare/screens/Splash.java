@@ -25,6 +25,7 @@ public class Splash implements Screen {
 		resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		LD34Main.gameTime = 0;
 		time = 0;
+		LD34Main.titleMusic.play();
 	}
 
 	@Override

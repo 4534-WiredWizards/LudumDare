@@ -33,6 +33,8 @@ public class GameScreen implements Screen {
 		camera = new OrthographicCamera(TitleScreen.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
 		player = new Player(0,0,camera);
 		LD34Main.gameTime = 0;
+		LD34Main.titleMusic.stop();
+		LD34Main.gameMusic.play();
 	}
 
 	@Override
