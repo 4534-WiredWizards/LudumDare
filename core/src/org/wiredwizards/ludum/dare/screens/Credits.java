@@ -18,8 +18,8 @@ public class Credits implements Screen {
 	public void show() {
 		batch = new SpriteBatch();
 		credits = Gdx.files.internal("credits.dat").readString();
-		camera = new OrthographicCamera(TitleScreen.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
-		resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        camera = new OrthographicCamera(TitleScreen.Companion.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
+        resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		LD34Main.gameTime = 0;
 	}
 
@@ -32,8 +32,8 @@ public class Credits implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		/*Render*/{
-			TitleScreen.font.draw(batch, credits, - camera.viewportWidth / 2 + 10, LD34Main.gameTime * 80);
-		}
+            TitleScreen.Companion.getFont().draw(batch, credits, -camera.viewportWidth / 2 + 10, LD34Main.gameTime * 80);
+        }
 		batch.end();
 	}
 
@@ -41,10 +41,10 @@ public class Credits implements Screen {
 	public void resize(int width, int height) {
 		if ((float) LD34Main.WIDTH / LD34Main.HEIGHT < (float) width / height) {
 			camera.viewportHeight = LD34Main.HEIGHT;
-			camera.viewportWidth = TitleScreen.getCamWidth(LD34Main.HEIGHT);
-		} else {
-			camera.viewportHeight = TitleScreen.getCamHeight(LD34Main.WIDTH);
-			camera.viewportWidth = LD34Main.WIDTH;
+            camera.viewportWidth = TitleScreen.Companion.getCamWidth(LD34Main.HEIGHT);
+        } else {
+            camera.viewportHeight = TitleScreen.Companion.getCamHeight(LD34Main.WIDTH);
+            camera.viewportWidth = LD34Main.WIDTH;
 		}
 	}
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.wiredwozards.ludum.dare.android"
+    package="org.wiredwizards.weeds2.android"
     android:versionCode="2"
     android:versionName="1.5.1" >
 

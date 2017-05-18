@@ -6,6 +6,7 @@ import org.wiredwizards.ludum.dare.GameObject;
 import org.wiredwizards.ludum.dare.LD34Main;
 import org.wiredwizards.ludum.dare.objects.Block;
 import org.wiredwizards.ludum.dare.objects.Player;
+import org.wiredwizards.ludum.dare.LD34Main;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
@@ -30,8 +31,8 @@ public class GameScreen implements Screen {
 	@Override
 	public void show() {
 		objects.clear();
-		camera = new OrthographicCamera(TitleScreen.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
-		player = new Player(0,0,camera);
+        camera = new OrthographicCamera(TitleScreen.Companion.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
+        player = new Player(0,0,camera);
 		LD34Main.gameTime = 0;
 		LD34Main.titleMusic.stop();
 		LD34Main.gameMusic.play();
@@ -42,17 +43,20 @@ public class GameScreen implements Screen {
 		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		/* Update */{
-			player.update(delta);
+            if (LD34Main.GOD && Gdx.input.isTouched()) {
+                delta *= LD34Main.GOD_SPEED;
+            }
+            player.update(delta);
 			currentLayer = (int)(LD34Main.gameTime / textureSwitchTime);
 			if (currentLayer > 6) {
 				LD34Main.setTheScreen(new Credits());
 			}
 			blockDelta += delta;
-			if (blockDelta > 0.6f) {
-				blockDelta = 0;
+            if (blockDelta > 0.4f) {
+                blockDelta = 0;
 				for (int i = 0; i < camera.viewportWidth / LD34Main.WIDTH + 1; i++) {
-					objects.add(new Block());
-				}
+                    objects.add(Block.create());
+                }
 			}
 		}
 		camera.position.y = (int)camera.position.y;
@@ -85,10 +89,10 @@ public class GameScreen implements Screen {
 	public void resize(int width, int height) {
 		if ((float) LD34Main.WIDTH / LD34Main.HEIGHT < (float) width / height) {
 			camera.viewportHeight = LD34Main.HEIGHT;
-			camera.viewportWidth = TitleScreen.getCamWidth(LD34Main.HEIGHT);
-		} else {
-			camera.viewportHeight = TitleScreen.getCamHeight(LD34Main.WIDTH);
-			camera.viewportWidth = LD34Main.WIDTH;
+            camera.viewportWidth = TitleScreen.Companion.getCamWidth(LD34Main.HEIGHT);
+        } else {
+            camera.viewportHeight = TitleScreen.Companion.getCamHeight(LD34Main.WIDTH);
+            camera.viewportWidth = LD34Main.WIDTH;
 		}
 	}
 

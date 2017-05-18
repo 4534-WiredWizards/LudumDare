@@ -21,8 +21,8 @@ public class Splash implements Screen {
 	public void show() {
 		batch = new SpriteBatch();
 		credits = Gdx.files.internal("credits.dat").readString();
-		camera = new OrthographicCamera(TitleScreen.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
-		resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        camera = new OrthographicCamera(TitleScreen.Companion.getCamWidth(LD34Main.HEIGHT), LD34Main.HEIGHT);
+        resize(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		LD34Main.gameTime = 0;
 		time = 0;
 		LD34Main.titleMusic.play();
@@ -41,8 +41,8 @@ public class Splash implements Screen {
 		batch.setProjectionMatrix(camera.combined);
 		batch.begin();
 		/*Render*/{
-			batch.draw(tex, -LD34Main.WIDTH / 2f, -(((float)LD34Main.WIDTH / tex.getWidth()) * tex.getHeight()) / 2f, LD34Main.WIDTH, ((float)LD34Main.WIDTH / tex.getWidth()) * tex.getHeight());
-		}
+            batch.draw(tex, -LD34Main.WIDTH / 2f, -(((float) LD34Main.WIDTH / tex.getWidth()) * tex.getHeight()) / 2f, LD34Main.WIDTH, ((float) LD34Main.WIDTH / tex.getWidth()) * tex.getHeight());
+        }
 		batch.end();
 	}
 
@@ -50,10 +50,10 @@ public class Splash implements Screen {
 	public void resize(int width, int height) {
 		if ((float) LD34Main.WIDTH / LD34Main.HEIGHT < (float) width / height) {
 			camera.viewportHeight = LD34Main.HEIGHT;
-			camera.viewportWidth = TitleScreen.getCamWidth(LD34Main.HEIGHT);
-		} else {
-			camera.viewportHeight = TitleScreen.getCamHeight(LD34Main.WIDTH);
-			camera.viewportWidth = LD34Main.WIDTH;
+            camera.viewportWidth = TitleScreen.Companion.getCamWidth(LD34Main.HEIGHT);
+        } else {
+            camera.viewportHeight = TitleScreen.Companion.getCamHeight(LD34Main.WIDTH);
+            camera.viewportWidth = LD34Main.WIDTH;
 		}
 	}
 
